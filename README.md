@@ -346,9 +346,6 @@ You can pass environment variables; the easiest way to do it is via a `.env` fil
   BLOCK_REPO_RENAME_BY_HUMAN=true
   ```
 
-- `NODE_TLS_REJECT_UNAUTHORIZED`: `0` for ignoring SSL validation and errors
-- `GHE_HOST`: This is a required field for **GitHub Enterprise Server** implementations (_Example: github.mycompany.com_)
-- `WEBHOOK_PROXY_URL`: SMEE Url for testing locally
 
 ### Runtime Settings
 

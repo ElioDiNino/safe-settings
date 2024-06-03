@@ -47,7 +47,10 @@ Note: If running locally without Docker, ensure that Node 16.x or later is insta
 
 - Update the `.env` with the fields outlined in the [Deployment Environment Variables](#deployment-environment-variables) section
 
-Other Optional values in the .env file can be found under the [Environment variables](../README.md#environment-variables) section.
+Optional values in the .env file can be found under the [Environment variables](../README.md#environment-variables) section. Additionally, you can set:
+- `NODE_TLS_REJECT_UNAUTHORIZED`: `0` for ignoring SSL validation and errors
+- `GHE_HOST`: This is a required field for **GitHub Enterprise Server** implementations (_Example: github.mycompany.com_)
+- `WEBHOOK_PROXY_URL`: SMEE Url for testing locally
 
 Once you have the `.env` file configured, you are ready to start the building of the container.
 

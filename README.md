@@ -6,25 +6,22 @@
 
 1. In `safe-settings`, all the settings are stored centrally in an `admin` repo within the organization. Unlike the [GitHub Repository Settings App](https://github.com/repository-settings/app), the settings files cannot be in individual repositories.
 
-  > [!NOTE]
-  > It is possible specify a custom repo instead of the `admin` repo with `ADMIN_REPO`. See [Environment variables](#environment-variables) for more details.
+   > It is possible specify a custom repo instead of the `admin` repo with `ADMIN_REPO`. See [Environment variables](#environment-variables) for more details.
 
 1. The **settings** in the **default** branch are applied. If the settings are changed on a non-default branch and a PR is created to merge the changes, the app runs in a `dry-run` mode to evaluate and validate the changes. Checks pass or fail based on the `dry-run` results.
 
 1. In `safe-settings` the settings can have 2 types of targets:
-  1. `org` - These settings are applied to the organization. `Org`-targeted settings are defined in `.github/settings.yml`. Currently, only `rulesets` are supported as `org`-targeted settings.
-  1. `repo` - These settings are applied to repositories.
+   1. `org` - These settings are applied to the organization. `Org`-targeted settings are defined in `.github/settings.yml`. Currently, only `rulesets` are supported as `org`-targeted settings.
+   1. `repo` - These settings are applied to repositories.
 
 1. For the `repo`-targeted settings, there can be 3 levels at which the settings are managed:
-  1. `Org`-level settings are defined in `.github/settings.yml`
+   1. `Org`-level settings are defined in `.github/settings.yml`
 
-    > [!NOTE]
-    > It is possible to override this behavior and specify a different filename for the `settings.yml` file with `SETTINGS_FILE_PATH`. Similarly, the `.github` directory can be overridden with `CONFIG_PATH`. See [Environment variables](#environment-variables) for more details.
+      > It is possible to override this behavior and specify a different filename for the `settings.yml` file with `SETTINGS_FILE_PATH`. Similarly, the `.github` directory can be overridden with `CONFIG_PATH`. See [Environment variables](#environment-variables) for more details.
 
-  1. `Suborg` level settings. A `suborg` is an arbitrary collection of repos belonging to projects, business units, or teams. The `suborg` settings reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
+   1. `Suborg` level settings. A `suborg` is an arbitrary collection of repos belonging to projects, business units, or teams. The `suborg` settings reside in a yaml file for each `suborg` in the `.github/suborgs` folder.
 
-    > [!NOTE]
-    > In `safe-settings`, `suborgs` could be groups of repos based on `repo names`, or `teams` which the repos have collaborators from, or `custom property values` set for the repos
+      > In `safe-settings`, `suborgs` could be groups of repos based on `repo names`, or `teams` which the repos have collaborators from, or `custom property values` set for the repos
 
    1. `Repo` level settings. They reside in a repo specific yaml in `.github/repos` folder
 
